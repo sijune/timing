@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
-public class PostsApiController {
+public class PostsApiController { //Rest한 데이터 이동
 
     private final PostsService postsService;
 
@@ -34,5 +34,9 @@ public class PostsApiController {
         return postsService.update(id, requestDto);
     }
 
-
+    @DeleteMapping("/api/v1/posts/{id}")
+    public Long delete(@PathVariable Long id) {
+        postsService.delete(id);
+        return id;
+    }
 }
