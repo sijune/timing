@@ -1,0 +1,48 @@
+{{>layout/header}}
+<section class="login-block">
+        <div class="row">
+            <div class="col-12">
+
+                <div class="card">
+                    <div class="card-block">
+
+                        {{#userName}}
+                            Logged in as : <span id="user">{{userName}}</span>
+                            <a href="/logout" class="btn btn-info active" role="button">Logout</a>
+                        {{/userName}}
+                        {{^userName}}
+                            <div class="row">
+                                <div class="col-12 mb-3">
+                                    <h3 class="text-center heading">Create your Timing account. <br>It’s free and only takes a minute.</h3>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="login-button">
+                                    <a class="btn btn-lg btn-google btn-block text-uppercase btn-outline" href="/oauth2/authorization/google">
+                                        <img src="https://img.icons8.com/color/16/000000/google-logo.png">
+                                        Google Login
+                                    </a>
+                                </div>
+                                <div class="login-button">
+                                    <a class="btn btn-lg btn-google btn-block text-uppercase btn-outline" href="/oauth2/authorization/naver">
+                                        <img src="https://img.icons8.com/color/16/000000/google-logo.png">
+                                        Naver Login
+                                    </a>
+                                </div>
+                                <div class="login-button">
+                                    <a class="btn btn-lg btn-google btn-block text-uppercase btn-outline" href="/oauth2/authorization/kakao">
+                                        <img src="https://img.icons8.com/color/16/000000/google-logo.png">
+                                        Kakao Login
+                                    </a>
+                                </div>
+                            </div>
+                        {{/userName}}
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+</section>
+{{>layout/footer}}

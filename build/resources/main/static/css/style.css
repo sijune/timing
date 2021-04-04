@@ -1,16 +1,166 @@
-body{
+body, h1,h2,h3,h4,h5,h6,span,ul{
     margin: 0;
     padding: 0;
 }
 
+h1,
+h2,
+h3 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+li {
+    list-style-type: none;
+}
+
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #000;
+}
+
 body{
     background: #e3e3e3;
-    max-width: 720px;
+    max-width: 724px;
     margin: 0 auto;
+}
+
+header {
+    display: block;
+    background: #fff;
+    margin-bottom: 5px;
+    padding: 0.4em 0.4em;
 }
 
 main {
     display: block;
-
     background: #fff;
+    padding: 0.4em 0.4em;
 }
+
+/*header*/
+.logo{
+    font-size: 30px;
+}
+
+.my_info{
+    font-size: 20px;
+}
+
+.menu-li{
+
+    margin: 0 1px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/*search-bar*/
+
+.search {
+    width: 100%;
+    margin-bottom: auto;
+    margin-top: 10px;
+    height: 50px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #111;
+}
+
+.search-input {
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    margin-top: 5px;
+    caret-color: transparent;
+    line-height: 20px;
+    transition: width 0.4s linear
+}
+
+.search .search-input {
+    padding: 0 10px;
+    width: 100%;
+    caret-color: #536bf6;
+    font-size: 19px;
+    font-weight: 300;
+    color: black;
+    transition: width 0.4s linear
+}
+
+.search-icon {
+    height: 34px;
+    width: 34px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #111;
+    font-size: 20px;
+    bottom: 30px;
+    position: relative;
+    border-radius: 5px
+}
+
+/*news-feed*/
+.news-feed {
+    border-bottom: 2px solid #555;
+}
+
+.news-feed-image {
+    border-radius: 8px;
+    height: 100%;
+    width: 100%;
+}
+
+.news-feed-info{
+    min-height: 100%;
+}
+
+.news-feed-text{
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+
+.date {
+    font-size: 12px
+}
+
+.news-feed-icon{
+   margin-right: 20px;
+    color: #aaa;
+}
+
+/*login block*/
+.login-block {
+    min-height: 93.6vh
+}
+
+.card {
+    box-shadow: 0 0 5px 0 rgba(43, 43, 43, .1), 0 11px 6px -7px rgba(43, 43, 43, .1);
+    border: none;
+    margin-bottom: 30px;
+    transition: all .3s ease-in-out;
+    background-color: #fff;
+    border-radius: 0; /* 값초기화*/
+}
+
+.card .card-block {
+    padding: 1.25rem
+}
+
+.login-button {
+    color: #545454;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 1px #ddd;
+    margin: 10px;
+}
+

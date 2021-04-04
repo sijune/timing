@@ -1,0 +1,116 @@
+[INFO ] 2021-04-04 17:06:43.085 [restartedMain][StartupInfoLogger.java] Application - Starting Application on SijuneLcBookPro with PID 60326 (/Users/sijune/IdeaProjects/timing/build/classes/java/main started by sijune in /Users/sijune/IdeaProjects/timing)
+[INFO ] 2021-04-04 17:06:43.088 [restartedMain][SpringApplication.java] Application - The following profiles are active: oauth
+[INFO ] 2021-04-04 17:06:43.131 [restartedMain][DeferredLog.java] DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 2021-04-04 17:06:43.131 [restartedMain][DeferredLog.java] DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO ] 2021-04-04 17:06:43.619 [restartedMain][RepositoryConfigurationDelegate.java] RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[INFO ] 2021-04-04 17:06:43.660 [restartedMain][RepositoryConfigurationDelegate.java] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 36ms. Found 2 repository interfaces.
+[INFO ] 2021-04-04 17:06:43.903 [restartedMain][PostProcessorRegistrationDelegate.java] PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7a101c89] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] 2021-04-04 17:06:44.108 [restartedMain][TomcatWebServer.java] TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[INFO ] 2021-04-04 17:06:44.117 [restartedMain][DirectJDKLog.java] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 2021-04-04 17:06:44.123 [restartedMain][DirectJDKLog.java] StandardService - Starting service [Tomcat]
+[INFO ] 2021-04-04 17:06:44.124 [restartedMain][DirectJDKLog.java] StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+[INFO ] 2021-04-04 17:06:44.228 [restartedMain][DirectJDKLog.java] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2021-04-04 17:06:44.229 [restartedMain][ServletWebServerApplicationContext.java] ContextLoader - Root WebApplicationContext: initialization completed in 1097 ms
+[INFO ] 2021-04-04 17:06:44.337 [restartedMain][HikariDataSource.java] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2021-04-04 17:06:44.409 [restartedMain][HikariDataSource.java] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2021-04-04 17:06:44.449 [restartedMain][LogHelper.java] LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ] 2021-04-04 17:06:44.489 [restartedMain][Version.java] Version - HHH000412: Hibernate Core {5.3.10.Final}
+[INFO ] 2021-04-04 17:06:44.491 [restartedMain][Environment.java] Environment - HHH000206: hibernate.properties not found
+[INFO ] 2021-04-04 17:06:44.568 [restartedMain][JavaReflectionManager.java] Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+[INFO ] 2021-04-04 17:06:44.656 [restartedMain][Dialect.java] Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+[INFO ] 2021-04-04 17:06:45.104 [restartedMain][SchemaCreatorImpl.java] SchemaCreatorImpl - HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@5a9697f6'
+[INFO ] 2021-04-04 17:06:45.107 [restartedMain][AbstractEntityManagerFactoryBean.java] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2021-04-04 17:06:45.188 [restartedMain][OptionalLiveReloadServer.java] OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 2021-04-04 17:06:45.525 [restartedMain][QueryTranslatorFactoryInitiator.java] QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+[INFO ] 2021-04-04 17:06:45.748 [restartedMain][DefaultSecurityFilterChain.java] DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@28794292, org.springframework.security.web.context.SecurityContextPersistenceFilter@2f09f60c, org.springframework.security.web.header.HeaderWriterFilter@38bd2322, org.springframework.security.web.authentication.logout.LogoutFilter@38d8b505, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@4b1626bd, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@2e98e838, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4ca01a18, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@d7f8afa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e9a6f71, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1527584f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20fbff55, org.springframework.security.web.session.SessionManagementFilter@49f8312a, org.springframework.security.web.access.ExceptionTranslationFilter@229b43f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@73d90d59]
+[INFO ] 2021-04-04 17:06:46.080 [restartedMain][ExecutorConfigurationSupport.java] ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[WARN ] 2021-04-04 17:06:46.108 [restartedMain][JpaBaseConfiguration.java] JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2021-04-04 17:06:46.143 [restartedMain][WelcomePageHandlerMapping.java] WelcomePageHandlerMapping - Adding welcome page template: index
+[INFO ] 2021-04-04 17:06:46.318 [restartedMain][ScheduledAnnotationBeanPostProcessor.java] ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+[INFO ] 2021-04-04 17:06:46.325 [restartedMain][DirectJDKLog.java] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 2021-04-04 17:06:46.356 [restartedMain][TomcatWebServer.java] TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[INFO ] 2021-04-04 17:06:46.359 [restartedMain][StartupInfoLogger.java] Application - Started Application in 3.452 seconds (JVM running for 4.097)
+[INFO ] 2021-04-04 17:06:51.736 [Thread-9][ExecutorConfigurationSupport.java] ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO ] 2021-04-04 17:06:51.737 [Thread-9][AbstractEntityManagerFactoryBean.java] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2021-04-04 17:06:51.737 [Thread-9][SchemaDropperImpl.java] SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[WARN ] 2021-04-04 17:06:51.746 [Thread-9][DisposableBeanAdapter.java] DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+[INFO ] 2021-04-04 17:06:51.747 [Thread-9][HikariDataSource.java] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2021-04-04 17:06:51.748 [Thread-9][HikariDataSource.java] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2021-04-04 17:06:51.939 [restartedMain][StartupInfoLogger.java] Application - Starting Application on SijuneLcBookPro with PID 60326 (/Users/sijune/IdeaProjects/timing/build/classes/java/main started by sijune in /Users/sijune/IdeaProjects/timing)
+[INFO ] 2021-04-04 17:06:51.940 [restartedMain][SpringApplication.java] Application - The following profiles are active: oauth
+[INFO ] 2021-04-04 17:06:52.128 [restartedMain][RepositoryConfigurationDelegate.java] RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[INFO ] 2021-04-04 17:06:52.138 [restartedMain][RepositoryConfigurationDelegate.java] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10ms. Found 2 repository interfaces.
+[INFO ] 2021-04-04 17:06:52.202 [restartedMain][PostProcessorRegistrationDelegate.java] PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7a101c89] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] 2021-04-04 17:06:52.268 [restartedMain][TomcatWebServer.java] TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[INFO ] 2021-04-04 17:06:52.269 [restartedMain][DirectJDKLog.java] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 2021-04-04 17:06:52.269 [restartedMain][DirectJDKLog.java] StandardService - Starting service [Tomcat]
+[INFO ] 2021-04-04 17:06:52.269 [restartedMain][DirectJDKLog.java] StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+[INFO ] 2021-04-04 17:06:52.278 [restartedMain][DirectJDKLog.java] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2021-04-04 17:06:52.279 [restartedMain][ServletWebServerApplicationContext.java] ContextLoader - Root WebApplicationContext: initialization completed in 337 ms
+[INFO ] 2021-04-04 17:06:52.337 [restartedMain][HikariDataSource.java] HikariDataSource - HikariPool-2 - Starting...
+[INFO ] 2021-04-04 17:06:52.339 [restartedMain][HikariDataSource.java] HikariDataSource - HikariPool-2 - Start completed.
+[INFO ] 2021-04-04 17:06:52.347 [restartedMain][LogHelper.java] LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ] 2021-04-04 17:06:52.355 [restartedMain][Dialect.java] Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+[INFO ] 2021-04-04 17:06:52.411 [restartedMain][SchemaCreatorImpl.java] SchemaCreatorImpl - HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@5a9697f6'
+[INFO ] 2021-04-04 17:06:52.411 [restartedMain][AbstractEntityManagerFactoryBean.java] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2021-04-04 17:06:52.457 [restartedMain][OptionalLiveReloadServer.java] OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 2021-04-04 17:06:52.552 [restartedMain][QueryTranslatorFactoryInitiator.java] QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+[INFO ] 2021-04-04 17:06:52.600 [restartedMain][DefaultSecurityFilterChain.java] DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@65ec101d, org.springframework.security.web.context.SecurityContextPersistenceFilter@3a6b9d0c, org.springframework.security.web.header.HeaderWriterFilter@715d49d5, org.springframework.security.web.authentication.logout.LogoutFilter@297ae558, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@3ce8f5ea, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@5f928503, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4f9f925a, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6f2bbd37, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6e9a1efc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7512e11b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1497529d, org.springframework.security.web.session.SessionManagementFilter@2ea292b9, org.springframework.security.web.access.ExceptionTranslationFilter@1aa9c19c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7f6ea46b]
+[INFO ] 2021-04-04 17:06:52.670 [restartedMain][ExecutorConfigurationSupport.java] ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[WARN ] 2021-04-04 17:06:52.678 [restartedMain][JpaBaseConfiguration.java] JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2021-04-04 17:06:52.696 [restartedMain][WelcomePageHandlerMapping.java] WelcomePageHandlerMapping - Adding welcome page template: index
+[INFO ] 2021-04-04 17:06:52.795 [restartedMain][ScheduledAnnotationBeanPostProcessor.java] ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+[INFO ] 2021-04-04 17:06:52.797 [restartedMain][DirectJDKLog.java] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 2021-04-04 17:06:52.800 [restartedMain][TomcatWebServer.java] TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[INFO ] 2021-04-04 17:06:52.800 [restartedMain][StartupInfoLogger.java] Application - Started Application in 0.897 seconds (JVM running for 10.538)
+[INFO ] 2021-04-04 17:06:52.804 [restartedMain][ConditionEvaluationDeltaLoggingListener.java] ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+[INFO ] 2021-04-04 17:07:56.701 [Thread-26][ExecutorConfigurationSupport.java] ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO ] 2021-04-04 17:07:56.702 [Thread-26][AbstractEntityManagerFactoryBean.java] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2021-04-04 17:07:56.703 [Thread-26][SchemaDropperImpl.java] SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[WARN ] 2021-04-04 17:07:56.706 [Thread-26][DisposableBeanAdapter.java] DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+[INFO ] 2021-04-04 17:07:56.706 [Thread-26][HikariDataSource.java] HikariDataSource - HikariPool-2 - Shutdown initiated...
+[INFO ] 2021-04-04 17:07:56.708 [Thread-26][HikariDataSource.java] HikariDataSource - HikariPool-2 - Shutdown completed.
+[INFO ] 2021-04-04 17:07:59.865 [restartedMain][StartupInfoLogger.java] Application - Starting Application on SijuneLcBookPro with PID 60352 (/Users/sijune/IdeaProjects/timing/build/classes/java/main started by sijune in /Users/sijune/IdeaProjects/timing)
+[INFO ] 2021-04-04 17:07:59.868 [restartedMain][SpringApplication.java] Application - The following profiles are active: oauth
+[INFO ] 2021-04-04 17:07:59.919 [restartedMain][DeferredLog.java] DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 2021-04-04 17:07:59.919 [restartedMain][DeferredLog.java] DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO ] 2021-04-04 17:08:00.491 [restartedMain][RepositoryConfigurationDelegate.java] RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[INFO ] 2021-04-04 17:08:00.543 [restartedMain][RepositoryConfigurationDelegate.java] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47ms. Found 2 repository interfaces.
+[INFO ] 2021-04-04 17:08:00.869 [restartedMain][PostProcessorRegistrationDelegate.java] PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$905e68f1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ] 2021-04-04 17:08:01.094 [restartedMain][TomcatWebServer.java] TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[INFO ] 2021-04-04 17:08:01.103 [restartedMain][DirectJDKLog.java] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 2021-04-04 17:08:01.110 [restartedMain][DirectJDKLog.java] StandardService - Starting service [Tomcat]
+[INFO ] 2021-04-04 17:08:01.110 [restartedMain][DirectJDKLog.java] StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+[INFO ] 2021-04-04 17:08:01.223 [restartedMain][DirectJDKLog.java] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2021-04-04 17:08:01.223 [restartedMain][ServletWebServerApplicationContext.java] ContextLoader - Root WebApplicationContext: initialization completed in 1304 ms
+[INFO ] 2021-04-04 17:08:01.329 [restartedMain][HikariDataSource.java] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2021-04-04 17:08:01.399 [restartedMain][HikariDataSource.java] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2021-04-04 17:08:01.440 [restartedMain][LogHelper.java] LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ] 2021-04-04 17:08:01.480 [restartedMain][Version.java] Version - HHH000412: Hibernate Core {5.3.10.Final}
+[INFO ] 2021-04-04 17:08:01.481 [restartedMain][Environment.java] Environment - HHH000206: hibernate.properties not found
+[INFO ] 2021-04-04 17:08:01.567 [restartedMain][JavaReflectionManager.java] Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+[INFO ] 2021-04-04 17:08:01.669 [restartedMain][Dialect.java] Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+[INFO ] 2021-04-04 17:08:02.173 [restartedMain][SchemaCreatorImpl.java] SchemaCreatorImpl - HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@131c446a'
+[INFO ] 2021-04-04 17:08:02.176 [restartedMain][AbstractEntityManagerFactoryBean.java] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2021-04-04 17:08:02.266 [restartedMain][OptionalLiveReloadServer.java] OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 2021-04-04 17:08:02.570 [restartedMain][QueryTranslatorFactoryInitiator.java] QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+[INFO ] 2021-04-04 17:08:02.737 [restartedMain][DefaultSecurityFilterChain.java] DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@257388ea, org.springframework.security.web.context.SecurityContextPersistenceFilter@13f3b853, org.springframework.security.web.header.HeaderWriterFilter@1a12c0b5, org.springframework.security.web.authentication.logout.LogoutFilter@7a4c4b68, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@1596a5b6, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@8f41fb3, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@bb4d80b, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@28f70e1c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1bae6c0b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51d75c31, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3fed5a3a, org.springframework.security.web.session.SessionManagementFilter@70efef92, org.springframework.security.web.access.ExceptionTranslationFilter@73c7e275, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2ebf0102]
+[INFO ] 2021-04-04 17:08:02.989 [restartedMain][ExecutorConfigurationSupport.java] ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[WARN ] 2021-04-04 17:08:03.009 [restartedMain][JpaBaseConfiguration.java] JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2021-04-04 17:08:03.036 [restartedMain][WelcomePageHandlerMapping.java] WelcomePageHandlerMapping - Adding welcome page template: index
+[INFO ] 2021-04-04 17:08:03.152 [restartedMain][ScheduledAnnotationBeanPostProcessor.java] ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+[INFO ] 2021-04-04 17:08:03.156 [restartedMain][DirectJDKLog.java] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 2021-04-04 17:08:03.178 [restartedMain][TomcatWebServer.java] TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[INFO ] 2021-04-04 17:08:03.180 [restartedMain][StartupInfoLogger.java] Application - Started Application in 3.49 seconds (JVM running for 4.182)
+[INFO ] 2021-04-04 17:10:17.727 [Thread-10][ExecutorConfigurationSupport.java] ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO ] 2021-04-04 17:10:17.728 [Thread-10][AbstractEntityManagerFactoryBean.java] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2021-04-04 17:10:17.728 [Thread-10][SchemaDropperImpl.java] SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[WARN ] 2021-04-04 17:10:17.735 [Thread-10][DisposableBeanAdapter.java] DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+[INFO ] 2021-04-04 17:10:17.735 [Thread-10][HikariDataSource.java] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2021-04-04 17:10:17.737 [Thread-10][HikariDataSource.java] HikariDataSource - HikariPool-1 - Shutdown completed.
