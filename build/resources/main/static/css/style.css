@@ -1,4 +1,4 @@
-body, h1,h2,h3,h4,h5,h6,span,ul{
+body,h1,h2,h3,h4,h5,h6,span,ul,header,main,footer{
     margin: 0;
     padding: 0;
 }
@@ -35,7 +35,6 @@ header {
     display: block;
     background: #fff;
     margin-bottom: 5px;
-    padding: 0.4em 0.4em;
 }
 
 main {
@@ -54,11 +53,15 @@ main {
 }
 
 .menu-li{
-
-    margin: 0 1px;
     text-align: center;
     font-size: 18px;
     font-weight: 500;
+    padding-bottom: 7px;
+    cursor: pointer;
+}
+
+.selected {
+    border-bottom: 4px solid #666;
 }
 
 /*search-bar*/

@@ -10,28 +10,28 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <div class="container">
+
         <header>
-            <div class="p-1">
+            <div class="p-3">
                 <div class="d-flex justify-content-between align-items-center mt-1">
                     <div class="p-1 logo"><a href="/"><h1>TIMING</h1></a></div>
                     <div class="p-1 my_info"><a href="/login_page"><h3>MY</h3></a></div>
 
                 </div>
                 <div class="d-flex justify-content-center">
+                    <!--ajax 처리 필요-->
                     <div class="search"> <input type="text" class="search-input" placeholder="Search..." name=""> <a href="#" class="search-icon"> <i class="fa fa-search"></i> </a> </div>
                 </div>
 
             </div>
             
             <!-- navbar -->
-            <div class="p-1 mt-2">
-                <div class="d-flex flex-row justify-content-around col-12 menu">
-                    <a href="/" class="col-3 menu-home menu-li"><div>홈</div></a>
-                    <a href="/stock" class="col-3 menu-stock menu-li"><div>증시</div></a>
-                    <a href="/coin" class="col-3 menu-coin menu-li"><div>암호화폐</div></a>
-                    <a href="/posts" class="col-3 menu-posts menu-li"><div>토론</div></a>
-                </div>
+            <div class="d-flex flex-row justify-content-around col-12 menu">
+                <div id="menu-home" class="col-3 menu-li">홈</div>
+                <div id="menu-stock" class="col-3 menu-li">증시</div>
+                <div id="menu-coin" class="col-3 menu-li">암호화폐</div>
+                <div id="menu-posts" class="col-3 menu-li">토론</div>
             </div>
+
 
         </header>

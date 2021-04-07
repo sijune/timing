@@ -33,13 +33,11 @@ public class IndexController { //화면간 이동을 담당
 
 
     @GetMapping("/posts")
-    public String index(Model model) {
+    public String posts(Model model) {
         model.addAttribute("posts", postsService.findAllDesc());
 
         return "posts";
     }
-
-
 
     @GetMapping("/posts/save")
     public String postsSave() {
