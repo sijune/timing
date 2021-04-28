@@ -18,6 +18,7 @@ public class IndexController { //화면간 이동을 담당
 
     @GetMapping("/")
     public String home(Model model, @LoginUser SessionUser user) {
+        System.out.println("####"+user);
         if(user != null){
             model.addAttribute("userName", user.getName());
             model.addAttribute("userEmail", user.getEmail());

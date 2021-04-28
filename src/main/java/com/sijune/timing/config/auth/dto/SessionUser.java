@@ -8,8 +8,6 @@ import java.io.Serializable;
 @Getter
 public class SessionUser implements Serializable { //직렬화 기능
 
-    private static final long serialVersionUID = 1L;
-
     private String name;
     private String email;
     private String picture;

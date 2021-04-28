@@ -4,15 +4,11 @@
     </button>
     <div>
     {{#userName}}
-        <div>{{userName}}</div>
-        <div>{{pushYn}}</div>
-        <div>{{pushCheckYn}}</div>
-        <div>{{userEmail}}</div>
-        <form type="hidden">
-            <input id="userName" value="{{userName}}">
-            <input id="userEmail" value="{{userEmail}}">
-            <input id="pushYn" value="{{pushYn}}">
-            <input id="pushCheckYn" value="{{pushCheckYn}}">
+        <form>
+            <input type="hidden" id="userName" value="{{userName}}">
+            <input type="hidden" id="userEmail" value="{{userEmail}}">
+            <input type="hidden" id="pushYn" value="{{pushYn}}">
+            <input type="hidden" id="pushCheckYn" value="{{pushCheckYn}}">
         </form>
     {{/userName}}
 

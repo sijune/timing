@@ -10,6 +10,12 @@ var main = {
         $("#btn-delete").on('click', function () {
             _this.delete();
         });
+        $("#btn-notify-ok").on('click', function () {
+            _this.notify_ok();
+        });
+        $("#btn-notify-cncl").on('click', function () {
+            _this.notify_cncl();
+        });
     },
     save : function () {
         var data = {
@@ -24,8 +30,9 @@ var main = {
             dataType : 'json',
             contentType : 'application/json; charset=utf-8',
             data : JSON.stringify(data)
-        }).done(function () {
+        }).done(function (returns) {
             alert('글이 등록되었습니다.');
+            console.log("%%%%%%%%%%%"+returns)
             window.location.href = '/posts';
         }).fail(function (error) {
             alert(JSON.stringify(error));
@@ -67,7 +74,62 @@ var main = {
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
+    },
+    notify_ok : function () {
+        var data = {
+            pushYn : 'Y',
+            userEmail : $("#userEmail").val()
+        };
+
+        $.ajax({
+            type : 'PUT',
+            url : '/api/v1/home/notify',
+            dataType : 'json',
+            contentType : 'application/json; charset=utf-8',
+            data : JSON.stringify(data)
+        }).done(function () {
+            alert('수신에 동의하셨습니다.');
+            window.location.href = '/';
+        }).fail(function (error) {
+            console.log(JSON.stringify(error));
+            alert(JSON.stringify(error));
+        });
+    },
+    notify_cncl : function () {
+        var data = {
+            pushYn : 'N',
+            userEmail : $("#userEmail").val()
+        };
+
+        $.ajax({
+            type : 'PUT',
+            url : '/api/v1/home/notify',
+            dataType : 'json',
+            contentType : 'application/json; charset=utf-8',
+            data : JSON.stringify(data)
+        }).done(function () {
+            alert('수신을 거부하셨습니다.');
+            window.location.href = '/';
+        }).fail(function (error) {
+            alert(JSON.stringify(error));
+        });
     }
 };
 console.log("#######");
 main.init();
+
+
+$(document).ready(function (){
+
+    var userName = $("#userName").val();
+    var pushYn = $('#pushYn').val();
+    var pushCheckYn = $('#pushCheckYn').val();
+    console.log(userName);
+    console.log(pushCheckYn);
+    console.log(pushYn);
+
+    if (pushYn == 'A') {
+        $('#myModal').modal();
+    }
+})
+

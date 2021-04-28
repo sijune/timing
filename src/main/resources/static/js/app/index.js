@@ -30,8 +30,9 @@ var main = {
             dataType : 'json',
             contentType : 'application/json; charset=utf-8',
             data : JSON.stringify(data)
-        }).done(function () {
+        }).done(function (returns) {
             alert('글이 등록되었습니다.');
+            console.log("%%%%%%%%%%%"+returns)
             window.location.href = '/posts';
         }).fail(function (error) {
             alert(JSON.stringify(error));

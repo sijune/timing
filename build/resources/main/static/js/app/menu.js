@@ -7,7 +7,7 @@ $(document).ready(function (){
     $('#menu-stock').on('click', function (){
         window.location.href = '/stock';
     })
-    $('#menu-coin').on('click', function (){
+    $('#menu-talk').on('click', function (){
         window.location.href = '/coin';
     })
     $('#menu-posts').on('click', function (){
@@ -20,27 +20,27 @@ $(document).ready(function (){
     if(nowUrl == '/'){
         $('#menu-home').addClass('selected');
         $('#menu-stock').removeClass('selected');
-        $('#menu-coin').removeClass('selected');
+        $('#menu-talk').removeClass('selected');
         $('#menu-posts').removeClass('selected');
     }else if(nowUrl == '/stock'){
         $('#menu-home').removeClass('selected');
         $('#menu-stock').addClass('selected');
-        $('#menu-coin').removeClass('selected');
+        $('#menu-talk').removeClass('selected');
         $('#menu-posts').removeClass('selected');
     }else if(nowUrl == '/coin'){
         $('#menu-home').removeClass('selected');
         $('#menu-stock').removeClass('selected');
-        $('#menu-coin').addClass('selected');
+        $('#menu-talk').addClass('selected');
         $('#menu-posts').removeClass('selected');
     }else if(nowUrl == '/posts'){
         $('#menu-home').removeClass('selected');
         $('#menu-stock').removeClass('selected');
-        $('#menu-coin').removeClass('selected');
+        $('#menu-talk').removeClass('selected');
         $('#menu-posts').addClass('selected');
     }else{
         $('#menu-home').removeClass('selected');
         $('#menu-stock').removeClass('selected');
-        $('#menu-coin').removeClass('selected');
+        $('#menu-talk').removeClass('selected');
         $('#menu-posts').removeClass('selected');
     }
 })
