@@ -10,6 +10,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor //기본 생성자 생성
 @Entity //테이블과 링크될 클래스
+@Table(name="POSTS")
 public class Posts extends BaseTimeEntity {
 
     @Id

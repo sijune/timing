@@ -1,4 +1,4 @@
-package com.sijune.timing.config.auth.config;
+package com.sijune.timing.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;

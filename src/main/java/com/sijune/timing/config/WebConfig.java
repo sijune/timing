@@ -1,4 +1,4 @@
-package com.sijune.timing.config.auth.config;
+package com.sijune.timing.config;
 
 import com.sijune.timing.config.auth.LoginUserArgumentResolver;
 import lombok.RequiredArgsConstructor;

@@ -17,7 +17,13 @@ public class IndexController { //화면간 이동을 담당
     private final PostsService postsService;
 
     @GetMapping("/")
-    public String home(Model model) {
+    public String home(Model model, @LoginUser SessionUser user) {
+        if(user != null){
+            model.addAttribute("userName", user.getName());
+            model.addAttribute("userEmail", user.getEmail());
+            model.addAttribute("pushYn", user.getPushYn());
+            model.addAttribute("pushCheckYn", user.getPushCheckYn());
+        }
         return "home";
     }
 
@@ -26,9 +32,9 @@ public class IndexController { //화면간 이동을 담당
         return "stock";
     }
 
-    @GetMapping("/coin")
-    public String coin(Model model) {
-        return "coin";
+    @GetMapping("/talk")
+    public String talk(Model model) {
+        return "talk";
     }
 
 

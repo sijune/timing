@@ -1,6 +1,45 @@
+    <!-- 모달을 열기 위한 버튼 -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        모달 보기 버튼
+    </button>
+    <div>
+    {{#userName}}
+        <div>{{userName}}</div>
+        <div>{{pushYn}}</div>
+        <div>{{pushCheckYn}}</div>
+        <div>{{userEmail}}</div>
+        <form type="hidden">
+            <input id="userName" value="{{userName}}">
+            <input id="userEmail" value="{{userEmail}}">
+            <input id="pushYn" value="{{pushYn}}">
+            <input id="pushCheckYn" value="{{pushCheckYn}}">
+        </form>
+    {{/userName}}
+
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">알림 동의</h5>
+                </div>
+                <div class="modal-body">
+                    <p>주식 리포팅 서비스 알림 사용에 동의하십니까?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btn-notify-ok" class="btn btn-primary">알림을 사용하겠습니다.</button>
+                    <button type="button" id="btn-notify-cncl" class="btn btn-secondary" data-dismiss="modal">사용하지 않겠습니다.</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
     <script src="/js/app/index.js"></script>
     <script src="/js/app/menu.js"></script>
     </body>
