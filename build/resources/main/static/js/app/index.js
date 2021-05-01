@@ -83,7 +83,7 @@ var main = {
 
         $.ajax({
             type : 'PUT',
-            url : '/api/v1/home/notify',
+            url : '/api/v1/notify/check',
             dataType : 'json',
             contentType : 'application/json; charset=utf-8',
             data : JSON.stringify(data)
@@ -103,7 +103,7 @@ var main = {
 
         $.ajax({
             type : 'PUT',
-            url : '/api/v1/home/notify',
+            url : '/api/v1/notify/check',
             dataType : 'json',
             contentType : 'application/json; charset=utf-8',
             data : JSON.stringify(data)
@@ -121,15 +121,31 @@ main.init();
 
 $(document).ready(function (){
 
-    var userName = $("#userName").val();
     var pushYn = $('#pushYn').val();
-    var pushCheckYn = $('#pushCheckYn').val();
-    console.log(userName);
-    console.log(pushCheckYn);
-    console.log(pushYn);
 
+    //아직 알림설정을 하지 않았다면
     if (pushYn == 'A') {
         $('#myModal').modal();
+    }
+
+    //push 알림이 Y라면
+    if(pushYn == 'Y'){
+        //알림정보를 가져온다.
+
+        $.ajax({
+            type : 'POST',
+            url : '/api/v1/notify/info',
+            dataType : 'json',
+            contentType : 'application/json; charset=utf-8',
+        }).done(function (data, textStatus, xhr) {
+            console.log(xhr.responseJSON);
+
+
+
+        }).fail(function (error) {
+            alert(JSON.stringify(error));
+        });
+
     }
 })
 

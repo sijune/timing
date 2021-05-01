@@ -17,13 +17,13 @@ public class IndexController { //화면간 이동을 담당
     private final PostsService postsService;
 
     @GetMapping("/")
-    public String home(Model model, @LoginUser SessionUser user) {
-        System.out.println("####"+user);
-        if(user != null){
-            model.addAttribute("userName", user.getName());
-            model.addAttribute("userEmail", user.getEmail());
-            model.addAttribute("pushYn", user.getPushYn());
-            model.addAttribute("pushCheckYn", user.getPushCheckYn());
+    public String home(Model model, @LoginUser SessionUser sessionUser) {
+        System.out.println("####"+sessionUser);
+        if(sessionUser != null){
+            model.addAttribute("userName", sessionUser.getName());
+            model.addAttribute("userEmail", sessionUser.getEmail());
+            model.addAttribute("pushYn", sessionUser.getPushYn());
+            model.addAttribute("pushCount", sessionUser.getPushCount());
         }
         return "home";
     }
@@ -61,10 +61,13 @@ public class IndexController { //화면간 이동을 담당
     }
 
     @GetMapping("/login_page")
-    public String loginPage(Model model, @LoginUser SessionUser user) {
+    public String loginPage(Model model, @LoginUser SessionUser sessionUser) {
 
-        if(user != null){
-            model.addAttribute("userName", user.getName());
+        if(sessionUser != null){
+            model.addAttribute("userName", sessionUser.getName());
+            model.addAttribute("userEmail", sessionUser.getEmail());
+            model.addAttribute("pushYn", sessionUser.getPushYn());
+            model.addAttribute("pushCount", sessionUser.getPushCount());
         }
         return "login-page";
     }

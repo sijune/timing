@@ -78,7 +78,8 @@ public class OAuthAttributes {
                 .picture(picture)
                 .role(Role.USER)
                 .pushYn("A")
-                .pushCheckYn("N")
+                .pushCount(1)
+                .subscribePeriod(7) //프리티어 기본 7일로 설정
                 .build();
     }
 }

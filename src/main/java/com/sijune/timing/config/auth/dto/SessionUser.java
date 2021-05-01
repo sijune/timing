@@ -12,14 +12,16 @@ public class SessionUser implements Serializable { //직렬화 기능
     private String email;
     private String picture;
     private String pushYn;
-    private String pushCheckYn;
+    private int pushCount;
+    private int subcribePeriod;
 
     public SessionUser(User user) {
         this.name = user.getName();
         this.email = user.getEmail();
         this.picture = user.getPicture();
         this.pushYn = user.getPushYn();
-        this.pushCheckYn = user.getPushCheckYn();
+        this.pushCount = user.getPushCount();
+        this.subcribePeriod = user.getSubscribePeriod();
     }
 
     public void setPushYn(String pushYn) {

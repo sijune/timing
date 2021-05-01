@@ -33,17 +33,21 @@ public class User extends BaseTimeEntity {
     @Column(name="push_yn")
     private String pushYn;
 
-    @Column(name="push_check_yn")
-    private String pushCheckYn;
+    @Column(name="push_count")
+    private int pushCount;
+
+    @Column(name="subscribe_period")
+    private int subscribePeriod;
 
     @Builder
-    public User(String name, String email, String picture, Role role, String pushYn, String pushCheckYn) {
+    public User(String name, String email, String picture, Role role, String pushYn, int pushCount, int subscribePeriod) {
         this.name = name;
         this.email = email;
         this.picture = picture;
         this.role = role;
         this.pushYn = pushYn;
-        this.pushCheckYn = pushCheckYn;
+        this.pushCount = pushCount;
+        this.subscribePeriod = subscribePeriod;
     }
 
     public User update(String name, String picture) {
