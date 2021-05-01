@@ -8,7 +8,7 @@ $(document).ready(function (){
         window.location.href = '/stock';
     })
     $('#menu-talk').on('click', function (){
-        window.location.href = '/coin';
+        window.location.href = '/talk';
     })
     $('#menu-posts').on('click', function (){
         window.location.href = '/posts';

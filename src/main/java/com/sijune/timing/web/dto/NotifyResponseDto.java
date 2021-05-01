@@ -21,6 +21,7 @@ public class NotifyResponseDto {
         this.analysisDate = entity.getAnalysisDate();
         this.marketCd = entity.getMarketCd();
         this.stockCd = entity.getStockCd();
+
         this.stock_date = entity.getStockDate();
         if(entity.getBuy() == 1) {
             this.opinion = "매수";

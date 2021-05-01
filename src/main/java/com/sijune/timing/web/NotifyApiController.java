@@ -5,6 +5,7 @@ import com.sijune.timing.config.auth.LoginUser;
 import com.sijune.timing.config.auth.dto.SessionUser;
 import com.sijune.timing.service.HomeService;
 import com.sijune.timing.service.NotifyService;
+import com.sijune.timing.web.dto.NotifyCountResponseDto;
 import com.sijune.timing.web.dto.NotifyResponseDto;
 import com.sijune.timing.web.dto.PushYnRequestDto;
 import com.sijune.timing.web.dto.PushYnResponseDto;
@@ -37,6 +38,6 @@ public class NotifyApiController {
     @PostMapping("/api/v1/notify/info")
     public List<NotifyResponseDto> getNotify(@LoginUser SessionUser sessionUser) {
 
-        return notifyService.findAllTiming(sessionUser);
+        return notifyService.findNotifyAll(sessionUser);
     }
 }

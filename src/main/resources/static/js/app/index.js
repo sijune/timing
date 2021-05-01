@@ -127,25 +127,5 @@ $(document).ready(function (){
     if (pushYn == 'A') {
         $('#myModal').modal();
     }
-
-    //push 알림이 Y라면
-    if(pushYn == 'Y'){
-        //알림정보를 가져온다.
-
-        $.ajax({
-            type : 'POST',
-            url : '/api/v1/notify/info',
-            dataType : 'json',
-            contentType : 'application/json; charset=utf-8',
-        }).done(function (data, textStatus, xhr) {
-            console.log(xhr.responseJSON);
-
-
-
-        }).fail(function (error) {
-            alert(JSON.stringify(error));
-        });
-
-    }
 })
 
