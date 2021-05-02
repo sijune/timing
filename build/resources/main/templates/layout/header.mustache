@@ -15,7 +15,30 @@
 			<div class="p-3">
 				<div class="d-flex justify-content-between align-items-center mt-1">
 					<div class="p-1 logo"><a href="/"><h1>TIMING</h1></a></div>
-					<div class="p-1 my_info"><a href="/login_page"><h3>MY</h3></a></div>
+                    <div class=" d-flex flex-row">
+                        {{#userName}}
+                        <div class="notification">
+                            <ul class="notification-drop">
+                                <li class="item">
+                                    <i class="fa fa-bell notification-bell" aria-hidden="true"></i>
+                                    {{#notifyCount}}
+                                    <span class="btn__badge pulse-button ">
+                                        {{notifyCount}}
+                                    </span>
+                                    {{/notifyCount}}
+                                    <ul>
+
+                                        {{#notifySummary}}
+                                            <a class="notification_data" href="/notify/{{marketLocCd}}/{{analysisDate}}"><li class="{{pushCheck}}"><span class="analysisDate">{{analysisDate}}</span>    {{positionBuy}}:{{countBuy}}, {{positionSell}}:{{countSell}} / {{pushCheck}}</li></a>
+                                        {{/notifySummary}}
+                                        </ul>
+
+                                </li>
+                            </ul>
+                        </div>
+                        {{/userName}}
+					    <div class="my_info"><a href="/login_page"><h3>MY</h3></a></div>
+                    </div>
 
 				</div>
 				<div class="d-flex justify-content-center">

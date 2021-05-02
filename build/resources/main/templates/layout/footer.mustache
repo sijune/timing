@@ -2,21 +2,15 @@
     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
         모달 보기 버튼
     </button>
+
     <div>
-    {{#notifyCount}}
-        <div>{{analysisDate}}</div>
-        <div>{{positionBuy}}</div>
-        <div>{{countBuy}}</div>
-        <div>{{positionSell}}</div>
-        <div>{{countSell}}</div>
-    {{/notifyCount}}
+
 
     {{#userName}}
         <form>
             <input type="hidden" id="userName" value="{{userName}}">
             <input type="hidden" id="userEmail" value="{{userEmail}}">
             <input type="hidden" id="pushYn" value="{{pushYn}}">
-            <input type="hidden" id="pushCount" value="{{pushCount}}">
         </form>
     {{/userName}}
 

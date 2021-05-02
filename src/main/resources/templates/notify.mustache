@@ -1,0 +1,35 @@
+
+{{>layout/header}}
+
+
+
+<div>
+    <table class="table table-horizontal table-bordered">
+        <thead class="thead-strong">
+        <tr>
+            <th>분석날짜</th>
+            <th>국가코드</th>
+            <th>시장코드</th>
+            <th>주식코드</th>
+            <th>주식명</th>
+            <th>의견날짜</th>
+            <th>투자의견</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        {{#notify}}
+            <tr>
+                <td>{{analysisDate}}</td>
+                <td>{{marketLocCd}}</td>
+                <td><a href="#">{{marketCd}}</a></td>
+                <td>{{stockCd}}</td>
+                <td>{{stockNm}}</td>
+                <td>{{stockDate}}</td>
+                <td>{{opinion}}</td>
+            </tr>
+        {{/notify}}
+        </tbody>
+    </table>
+</div>
+
+{{>layout/footer}}

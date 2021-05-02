@@ -33,20 +33,16 @@ public class User extends BaseTimeEntity {
     @Column(name="push_yn")
     private String pushYn;
 
-    @Column(name="push_count")
-    private int pushCount;
-
     @Column(name="subscribe_period")
     private int subscribePeriod;
 
     @Builder
-    public User(String name, String email, String picture, Role role, String pushYn, int pushCount, int subscribePeriod) {
+    public User(String name, String email, String picture, Role role, String pushYn, int subscribePeriod) {
         this.name = name;
         this.email = email;
         this.picture = picture;
         this.role = role;
         this.pushYn = pushYn;
-        this.pushCount = pushCount;
         this.subscribePeriod = subscribePeriod;
     }
 
@@ -57,7 +53,7 @@ public class User extends BaseTimeEntity {
         return this;
     }
 
-    public User update_push_yn(String pushYn) {
+    public User updatePushYn(String pushYn) {
         this.pushYn = pushYn;
 
         return this;

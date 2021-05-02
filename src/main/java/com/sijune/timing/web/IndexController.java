@@ -4,6 +4,7 @@ import com.sijune.timing.config.auth.LoginUser;
 import com.sijune.timing.config.auth.dto.SessionUser;
 import com.sijune.timing.service.NotifyService;
 import com.sijune.timing.service.PostsService;
+import com.sijune.timing.web.dto.NotifyResponseDto;
 import com.sijune.timing.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -11,31 +12,38 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import javax.servlet.http.HttpSession;
+
 @RequiredArgsConstructor
 @Controller
 public class IndexController { //화면간 이동을 담당
 
     private final PostsService postsService;
     private final NotifyService notifyService;
+    private final HttpSession httpSession;
 
     @GetMapping("/")
     public String home(Model model, @LoginUser SessionUser sessionUser) {
-
         checkSessionUser(model, sessionUser);
-
         return "home";
+    }
+
+    @GetMapping("/notify/{marketLocCd}/{analysisDate}")
+    public String notify(@PathVariable String analysisDate,@PathVariable String marketLocCd,Model model, @LoginUser SessionUser sessionUser){
+        String email = notifyService.updatePushCheck(analysisDate, marketLocCd, sessionUser);
+        model.addAttribute("notify", notifyService.findNotifyAll(analysisDate, sessionUser));
+        checkSessionUser(model, sessionUser);
+        return "notify";
     }
 
     @GetMapping("/stock")
     public String stock(Model model, @LoginUser SessionUser sessionUser) {
-
         checkSessionUser(model, sessionUser);
         return "stock";
     }
 
     @GetMapping("/talk")
     public String talk(Model model, @LoginUser SessionUser sessionUser) {
-
         checkSessionUser(model, sessionUser);
         return "talk";
     }
@@ -75,8 +83,8 @@ public class IndexController { //화면간 이동을 담당
             model.addAttribute("userName", sessionUser.getName());
             model.addAttribute("userEmail", sessionUser.getEmail());
             model.addAttribute("pushYn", sessionUser.getPushYn());
-            model.addAttribute("pushCount", sessionUser.getPushCount());
             if("Y".equals(sessionUser.getPushYn())){
+                model.addAttribute("notifySummary", notifyService.findNotifySummary(sessionUser));
                 model.addAttribute("notifyCount", notifyService.findNotifyCount(sessionUser));
             }
         }

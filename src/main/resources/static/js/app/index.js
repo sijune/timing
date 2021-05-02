@@ -16,6 +16,9 @@ var main = {
         $("#btn-notify-cncl").on('click', function () {
             _this.notify_cncl();
         });
+        $(".notification-drop .item").on('click',function() {
+            $(this).find('ul').toggle();
+        });
     },
     save : function () {
         var data = {
@@ -83,7 +86,7 @@ var main = {
 
         $.ajax({
             type : 'PUT',
-            url : '/api/v1/notify/check',
+            url : '/api/v1/notify/agree',
             dataType : 'json',
             contentType : 'application/json; charset=utf-8',
             data : JSON.stringify(data)
@@ -103,7 +106,7 @@ var main = {
 
         $.ajax({
             type : 'PUT',
-            url : '/api/v1/notify/check',
+            url : '/api/v1/notify/agree',
             dataType : 'json',
             contentType : 'application/json; charset=utf-8',
             data : JSON.stringify(data)
@@ -113,7 +116,8 @@ var main = {
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
-    }
+    },
+
 };
 console.log("#######");
 main.init();
@@ -128,4 +132,3 @@ $(document).ready(function (){
         $('#myModal').modal();
     }
 })
-

@@ -3,12 +3,8 @@ package com.sijune.timing.web;
 
 import com.sijune.timing.config.auth.LoginUser;
 import com.sijune.timing.config.auth.dto.SessionUser;
-import com.sijune.timing.service.HomeService;
 import com.sijune.timing.service.NotifyService;
-import com.sijune.timing.web.dto.NotifyCountResponseDto;
-import com.sijune.timing.web.dto.NotifyResponseDto;
-import com.sijune.timing.web.dto.PushYnRequestDto;
-import com.sijune.timing.web.dto.PushYnResponseDto;
+import com.sijune.timing.web.dto.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -22,22 +18,15 @@ import java.util.List;
 @RestController
 public class NotifyApiController {
 
-    private final HomeService homeService;
     private final NotifyService notifyService;
     private final HttpSession httpSession;
 
     //UPDATE
-    @PutMapping("/api/v1/notify/check")
-    public PushYnResponseDto update(@RequestBody PushYnRequestDto requestDto) {
-        PushYnResponseDto modifiedUser= homeService.update_notify(requestDto);
+    @PutMapping("/api/v1/notify/agree")
+    public PushYnResponseDto updatePushYn(@RequestBody PushYnRequestDto requestDto) {
+        PushYnResponseDto modifiedUser= notifyService.updatePushYn(requestDto);
         httpSession.setAttribute("user", new SessionUser(modifiedUser.getUser()));
         return modifiedUser;
     }
 
-    //POST
-    @PostMapping("/api/v1/notify/info")
-    public List<NotifyResponseDto> getNotify(@LoginUser SessionUser sessionUser) {
-
-        return notifyService.findNotifyAll(sessionUser);
-    }
 }

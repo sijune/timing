@@ -9,32 +9,25 @@ import java.util.List;
 public class NotifyResponseDto {
 
     private String analysisDate;
+    private String marketLocCd;
     private String marketCd;
     private String stockCd;
-    private String stock_date;
+    private String stockNm;
+    private String stockDate;
     private String opinion;
 
     public NotifyResponseDto() {
     }
 
-    public NotifyResponseDto(Notify entity) {
-        this.analysisDate = entity.getAnalysisDate();
-        this.marketCd = entity.getMarketCd();
-        this.stockCd = entity.getStockCd();
 
-        this.stock_date = entity.getStockDate();
-        if(entity.getBuy() == 1) {
-            this.opinion = "매수";
-        }else if(entity.getBuy()==2){
-            this.opinion = "강한매수";
-        }else if(entity.getSell()== 1){
-            this.opinion = "매도";
-        }else if(entity.getSell() == 2){
-            this.opinion = "강한매도";
-        }else{
-            this.opinion = "의견없음";
-        }
-
+    public NotifyResponseDto(String analysisDate, String marketLocCd, String marketCd, String stockCd, String stockNm, String stockDate, String opinion) {
+        this.analysisDate = analysisDate;
+        this.marketLocCd = marketLocCd;
+        this.marketCd = marketCd;
+        this.stockCd = stockCd;
+        this.stockNm = stockNm;
+        this.stockDate = stockDate;
+        this.opinion = opinion;
 
     }
 }
