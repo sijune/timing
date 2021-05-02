@@ -39,17 +39,15 @@ public class NotifyService {
         try {
             //1. triple screen에 대한 전체 요약을 가져온다.
             String tradeClsCd = "10";
-            List<NotifySummary> ns = notifyRepository.findNotifySummary(tradeClsCd);
+
+            List<NotifyCheck> nc = notifyRepository.findPushCheckList(email);
             //2. 분석날짜 체크 확인해서 리턴
-            for (int i = 0; i < ns.size(); i++) {
-                String analysisDate = ns.get(i).getAnalysisDate();
-                String marketLocCd = ns.get(i).getMarketLocCd();
-                NotifyCheck nc = notifyRepository.findPushCheck(email, analysisDate, marketLocCd);
-                if(nc == null){ //예외처리
-                    System.out.println("NullPointException : "+email+"은 "+analysisDate+" 에 존재하지 않음.");
-                    continue;
-                }
-                String pushCheck = nc.getCheckYn();
+            for (int i = 0; i < nc.size(); i++) {
+                String analysisDate = nc.get(i).getAnalysisDate();
+                String marketLocCd = nc.get(i).getMarketLocCd();
+
+                List<NotifySummary> ns = notifyRepository.findNotifySummary(analysisDate, marketLocCd, tradeClsCd);
+                String pushCheck = nc.get(i).getCheckYn();
                 String pushCheckClassNm = null;
                 if(pushCheck=="Y"){
                     pushCheckClassNm = "push_check_y";

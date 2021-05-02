@@ -21,9 +21,11 @@ public interface NotifyRepository extends JpaRepository<Notify, NotifyId> { //ê¸
 
     @Query(value = "SELECT n" +
             "         FROM NotifySummary n" +
-            "        WHERE n.tradeClsCd = ?1 " +
+            "        WHERE n.analysisDate = ?1 " +
+            "          AND n.marketLocCd = ?2 " +
+            "          AND n.tradeClsCd = ?3 " +
             "     ORDER BY n.analysisDate DESC")
-    List<NotifySummary> findNotifySummary(String tradeClsCd);
+    List<NotifySummary> findNotifySummary(String analysisDate, String marketLocCd, String tradeClsCd);
 
     @Query(value="SELECT p " +
             "       FROM NotifyCheck p" +
@@ -32,7 +34,14 @@ public interface NotifyRepository extends JpaRepository<Notify, NotifyId> { //ê¸
             "        AND p.marketLocCd = ?3")
     NotifyCheck findPushCheck(String email, String analysisDate, String marketLocCd);
 
+    @Query(value="SELECT p " +
+            "       FROM NotifyCheck p" +
+            "      WHERE p.email = ?1 ")
+    List<NotifyCheck> findPushCheckList(String email);
+
     @Query(value="SELECT COUNT(analysis_date) as pushCount FROM ST_NOTIFY_CHECK WHERE check_yn = 'N' AND email = ?1", nativeQuery = true)
     NotifyCountWrapper findNotifyCount(String email);
+
+
 
 }
