@@ -40,12 +40,15 @@ public class NotifyService {
             //1. triple screen에 대한 전체 요약을 가져온다.
             String tradeClsCd = "10";
             List<NotifySummary> ns = notifyRepository.findNotifySummary(tradeClsCd);
-
             //2. 분석날짜 체크 확인해서 리턴
             for (int i = 0; i < ns.size(); i++) {
                 String analysisDate = ns.get(i).getAnalysisDate();
                 String marketLocCd = ns.get(i).getMarketLocCd();
                 NotifyCheck nc = notifyRepository.findPushCheck(email, analysisDate, marketLocCd);
+                if(nc == null){ //예외처리
+                    System.out.println("NullPointException : "+email+"은 "+analysisDate+" 에 존재하지 않음.");
+                    continue;
+                }
                 String pushCheck = nc.getCheckYn();
                 String pushCheckClassNm = null;
                 if(pushCheck=="Y"){
@@ -55,7 +58,6 @@ public class NotifyService {
                 }
                 rs.add(new NotifyCountResponseDto(analysisDate, marketLocCd, "매수", ns.get(i).getBuyCount(),"매도", ns.get(i).getSellCount(), pushCheckClassNm));
             }
-
         }catch(Exception e) {
             System.out.println(e);
         }finally {
@@ -70,7 +72,6 @@ public class NotifyService {
 
         String email = sessionUser.getEmail();
         NotifyCountWrapper ncw = notifyRepository.findNotifyCount(email);
-        System.out.println("**" +ncw.getPushCount());
         return ncw.getPushCount();
 
     }
@@ -100,7 +101,6 @@ public class NotifyService {
             List<NotifyWrapper> nw = notifyRepository.findNotifyAll(analysisDate, startDate, endDate, tradeClsCd);
 
 
-            System.out.println("^^^^^^^^^^^"+ nw.size());
             for (int i = 0; i < nw.size(); i++) {
                 rs.add(new NotifyResponseDto(nw.get(i).getAnalysisDate(),
                                                 nw.get(i).getMarketLocCd(),
