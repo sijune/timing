@@ -1,0 +1,33 @@
+
+{{>layout/header}}
+
+<div>
+    <canvas id="analysisChart10_1"></canvas>
+    <canvas id="analysisChart10_2"></canvas>
+    <canvas id="analysisChart10_3"></canvas>
+</div>
+
+<div>
+
+    <table class="table table-horizontal table-bordered" id="analysis10_table">
+        {{#notifyDetail10}}
+            <tr>
+                <td>{{analysisDate}}</td>
+                <td>{{marketCd}}</td>
+                <td>{{stockCd}}</td>
+                <td>{{stockDate}}</td>
+                <td>{{close}}</td>
+                <td>{{ema130}}</td>
+                <td>{{ema60}}</td>
+                <td>{{macd}}</td>
+                <td>{{macdSignal}}</td>
+                <td>{{macdHist}}</td>
+                <td>{{fastK}}</td>
+                <td>{{slowD}}</td>
+
+            </tr>
+        {{/notifyDetail10}}
+    </table>
+</div>
+
+{{>layout/footer}}
