@@ -3,9 +3,6 @@ package com.sijune.timing.service;
 import com.sijune.timing.config.auth.dto.SessionUser;
 
 import com.sijune.timing.domain.Notify.*;
-import com.sijune.timing.domain.PriceDay.PriceDayRepository;
-import com.sijune.timing.domain.posts.Posts;
-import com.sijune.timing.domain.posts.PostsRepository;
 import com.sijune.timing.domain.user.User;
 import com.sijune.timing.domain.user.UserRepository;
 import com.sijune.timing.web.dto.*;
@@ -41,21 +38,36 @@ public class NotifyService {
             String tradeClsCd = "10";
 
             List<NotifyCheck> nc = notifyRepository.findPushCheckList(email);
+
+            System.out.println("#####1");
             //2. 분석날짜 체크 확인해서 리턴
             for (int i = 0; i < nc.size(); i++) {
                 String analysisDate = nc.get(i).getAnalysisDate();
                 String marketLocCd = nc.get(i).getMarketLocCd();
-
-                List<NotifySummary> ns = notifyRepository.findNotifySummary(analysisDate, marketLocCd, tradeClsCd);
                 String pushCheck = nc.get(i).getCheckYn();
+
+                NotifySummary ns = notifyRepository.findNotifySummary(analysisDate, marketLocCd, tradeClsCd);
+                if(ns == null){
+                    System.out.println("분석된 데이터가 없습니다.");
+                    continue;
+                }
+
                 String pushCheckClassNm = null;
-                if(pushCheck=="Y"){
+                if("Y".equals(pushCheck)){
                     pushCheckClassNm = "push_check_y";
                 }else{
                     pushCheckClassNm = "push_check_n";
                 }
-                rs.add(new NotifyCountResponseDto(analysisDate, marketLocCd, "매수", ns.get(i).getBuyCount(),"매도", ns.get(i).getSellCount(), pushCheckClassNm));
+                System.out.println("#####3");
+                System.out.println(analysisDate);
+                System.out.println(pushCheck);
+                System.out.println(pushCheckClassNm);
+                NotifyCountResponseDto ncrd = new NotifyCountResponseDto(analysisDate, marketLocCd, "매수", ns.getBuyCount(),"매도", ns.getSellCount(), pushCheckClassNm);
+
+                rs.add(ncrd);
+                System.out.println("#####4");
             }
+            System.out.println("#####5");
         }catch(Exception e) {
             System.out.println(e);
         }finally {
@@ -74,7 +86,7 @@ public class NotifyService {
 
     }
 
-    //READ DESC
+    //날짜별 전체데이터 조회
     @Transactional(readOnly = true)
     public List<NotifyResponseDto> findNotifyAll(String analysisDate, SessionUser sessionUser) {
 
@@ -85,7 +97,7 @@ public class NotifyService {
 
             String tradeClsCd = "10";
 
-            //오늘 기준 10일 이전 매수매도 타이밍 제공
+            //분석날짜 기준 10일 이전 매수매도 타이밍 제공
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             String endDate = analysisDate;
             Date from = sdf.parse(analysisDate);
@@ -108,6 +120,42 @@ public class NotifyService {
                                                 nw.get(i).getStockDate(),
                                                 nw.get(i).getOpinion()));
             }
+
+        }catch(Exception e) {
+            System.out.println(e);
+        }finally {
+            return rs;
+        }
+
+    }
+
+    //날짜별 개별데이터 조회, 10
+    @Transactional(readOnly = true)
+    public List<NotifyDetail10ResponseDto> findNotifyDetail10(String analysisDate, String marketLocCd, String marketCd, String stockCd, SessionUser sessionUser) {
+
+        String email = sessionUser.getEmail();
+        List<NotifyDetail10ResponseDto> rs = new ArrayList<>();
+
+        try {
+
+            String tradeClsCd = "10";
+
+            //분석날짜 기준 1년간 데이터 제공
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String endDate = analysisDate;
+            Date from = sdf.parse(analysisDate);
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(from);
+            cal.add(Calendar.YEAR, -1);
+            String startDate = sdf.format(cal.getTime());
+
+
+            //분석일자에 10일간 데이터 추출
+            rs = notifyRepository.findNotifyDetail10(analysisDate, startDate, endDate, marketCd, stockCd)
+                    .stream()
+                    .map(NotifyDetail10ResponseDto::new)
+                    .collect(Collectors.toList());
+
 
         }catch(Exception e) {
             System.out.println(e);

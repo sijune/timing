@@ -1,6 +1,5 @@
 package com.sijune.timing.domain.Notify;
 
-import com.sijune.timing.web.dto.NotifyResponseDto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -19,13 +18,22 @@ public interface NotifyRepository extends JpaRepository<Notify, NotifyId> { //ê¸
                     "WHERE a.analysis_date = ?1 AND a.stock_date BETWEEN ?2 AND ?3 AND a.trade_cls_cd = ?4 ORDER BY a.stock_date DESC", nativeQuery = true)
     List<NotifyWrapper> findNotifyAll(String analysisDate, String startDate, String endDate, String tradeClsCd); //QueryDsl
 
+    @Query(value = "SELECT t10 " +
+            "         FROM NotifyDetail10 t10 " +
+            "        WHERE t10.analysisDate = ?1 " +
+            "          AND t10.stockDate BETWEEN ?2 AND ?3 " +
+            "          AND t10.marketCd = ?4" +
+            "          AND t10.stockCd = ?5" +
+            "        ORDER BY t10.stockDate")
+    List<NotifyDetail10> findNotifyDetail10(String analysisDate, String startDate, String endDate, String marketCd, String stockCd); //QueryDsl
+
     @Query(value = "SELECT n" +
             "         FROM NotifySummary n" +
             "        WHERE n.analysisDate = ?1 " +
             "          AND n.marketLocCd = ?2 " +
             "          AND n.tradeClsCd = ?3 " +
             "     ORDER BY n.analysisDate DESC")
-    List<NotifySummary> findNotifySummary(String analysisDate, String marketLocCd, String tradeClsCd);
+    NotifySummary findNotifySummary(String analysisDate, String marketLocCd, String tradeClsCd);
 
     @Query(value="SELECT p " +
             "       FROM NotifyCheck p" +

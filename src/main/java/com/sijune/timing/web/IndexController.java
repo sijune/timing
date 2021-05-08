@@ -28,12 +28,26 @@ public class IndexController { //화면간 이동을 담당
         return "home";
     }
 
-    @GetMapping("/notify/{marketLocCd}/{analysisDate}")
+    //전체 데이터 확인
+    @GetMapping("/notify/{analysisDate}/{marketLocCd}")
     public String notify(@PathVariable String analysisDate,@PathVariable String marketLocCd,Model model, @LoginUser SessionUser sessionUser){
         String email = notifyService.updatePushCheck(analysisDate, marketLocCd, sessionUser);
         model.addAttribute("notify", notifyService.findNotifyAll(analysisDate, sessionUser));
         checkSessionUser(model, sessionUser);
         return "notify";
+    }
+
+    //개별 데이터 확인
+    @GetMapping("/notify/{analysisDate}/{marketLocCd}/{marketCd}/{stockCd}")
+    public String notify(@PathVariable String analysisDate,
+                         @PathVariable String marketLocCd,
+                         @PathVariable String marketCd,
+                         @PathVariable String stockCd,
+                         Model model, @LoginUser SessionUser sessionUser){
+        System.out.println("#####OK");
+        model.addAttribute("notifyDetail10", notifyService.findNotifyDetail10(analysisDate, marketLocCd, marketCd, stockCd, sessionUser));
+        checkSessionUser(model, sessionUser);
+        return "analysis";
     }
 
     @GetMapping("/stock")
