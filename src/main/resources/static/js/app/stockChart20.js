@@ -1,32 +1,28 @@
 $(document).ready(function(data) {
-    var analysisChart10_1 = document.getElementById('analysisChart10_1');
-    var analysisChart10_2 = document.getElementById('analysisChart10_2');
-    var analysisChart10_3 = document.getElementById('analysisChart10_3');
+    var analysisChart20_1 = document.getElementById('analysisChart20-1');
+    var analysisChart20_2 = document.getElementById('analysisChart20-2');
+    var analysisChart20_3 = document.getElementById('analysisChart20-3');
 
     var stock_date = []
     var close = []
-    var ema130 = []
-    var macd = []
-    var macd_signal = []
-    var macd_hist = []
-    var fast_k = []
-    var slow_d = []
+    var ma20 = []
+    var upper = []
+    var lower = []
+    var pb = []
+    var mfi10 = []
 
-    var table = document.getElementById('analysis10_table');
+    var table = document.getElementById('analysis20-table');
     for (var r = 0, n = table.rows.length; r < n; r++) {
-        stock_date.push(table.rows[r].cells[3].innerHTML)
-        close.push(table.rows[r].cells[4].innerHTML)
-        ema130.push(table.rows[r].cells[5].innerHTML)
-        macd.push(table.rows[r].cells[7].innerHTML)
-        macd_signal.push(table.rows[r].cells[8].innerHTML)
-        macd_hist.push(table.rows[r].cells[9].innerHTML)
-        fast_k.push(table.rows[r].cells[10].innerHTML)
-        slow_d.push(table.rows[r].cells[11].innerHTML)
+        stock_date.push(table.rows[r].cells[2].innerHTML)
+        close.push(table.rows[r].cells[3].innerHTML)
+        ma20.push(table.rows[r].cells[4].innerHTML)
+        upper.push(table.rows[r].cells[5].innerHTML)
+        lower.push(table.rows[r].cells[6].innerHTML)
+        pb.push(table.rows[r].cells[7].innerHTML)
+        mfi10.push(table.rows[r].cells[8].innerHTML * 0.01)
     }
 
-    console.log(close)
-
-    var mixedChart1 = new Chart(analysisChart10_1, {
+    var mixedChart1 = new Chart(analysisChart20_1, {
         data: {
             datasets: [{
                 type: 'line',
@@ -34,13 +30,7 @@ $(document).ready(function(data) {
                 data: close,
                 borderColor: '#F08282',
                 pointBorderWidth: -1,
-            }, {
-                type: 'line',
-                label: 'ema130',
-                data: ema130,
-                borderColor: '#9B7E7E',
-                pointBorderWidth: -1,
-            }],
+            }, ],
             labels: stock_date,
             options: {
                 responsive: true,
@@ -57,28 +47,36 @@ $(document).ready(function(data) {
         },
     });
 
-    var mixedChart2 = new Chart(analysisChart10_2, {
+    var mixedChart2 = new Chart(analysisChart20_2, {
         data: {
             datasets: [{
                 type: 'line',
-                label: 'MACD',
-                data: macd,
+                label: 'upper',
+                data: upper,
                 fill: true,
-                borderColor: '#DA5252',
+                borderColor: 'red',
                 pointBorderWidth: -1,
             }, {
                 type: 'line',
-                label: 'MACD Signal',
-                data: macd_signal,
+                label: 'lower',
+                data: lower,
                 fill: true,
-                borderColor: '#8777EF',
+                borderColor: 'blue',
                 pointBorderWidth: -1,
-            }, {
-                type: 'bar',
-                label: 'MACD Hist',
-                borderColor: '#878052',
-                backgroundColor: '#878052',
-                data: macd_hist
+            },{
+                type: 'line',
+                label: 'ma20',
+                data: ma20,
+                fill: true,
+                borderColor: 'grey',
+                pointBorderWidth: -1,
+            },{
+                type: 'line',
+                label: 'close',
+                data: close,
+                fill: true,
+                borderColor: '#A1B3A4',
+                pointBorderWidth: -1,
             }],
             labels: stock_date,
             options: {
@@ -89,25 +87,25 @@ $(document).ready(function(data) {
                     },
                     title: {
                         display: true,
-                        text: 'MACD'
+                        text: 'Bollinger'
                     }
                 }
             },
         },
     });
 
-    var mixedChart3 = new Chart(analysisChart10_3, {
+    var mixedChart3 = new Chart(analysisChart20_3, {
         data: {
             datasets: [{
                 type: 'line',
-                label: 'Fast K',
-                data: fast_k,
+                label: 'B%',
+                data: pb,
                 borderColor: '#A1B3A4',
                 pointBorderWidth: -1,
             }, {
                 type: 'line',
-                label: 'Slow D',
-                data: slow_d,
+                label: 'MFI10',
+                data: mfi10,
                 borderColor: '#1E652A',
                 pointBorderWidth: -1,
             }],
@@ -120,12 +118,10 @@ $(document).ready(function(data) {
                     },
                     title: {
                         display: true,
-                        text: 'Fast & Slow'
+                        text: 'B% & MFI10'
                     }
                 }
             },
         },
     });
-
-
 })

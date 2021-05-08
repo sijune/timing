@@ -27,6 +27,24 @@ public interface NotifyRepository extends JpaRepository<Notify, NotifyId> { //ê¸
             "        ORDER BY t10.stockDate")
     List<NotifyDetail10> findNotifyDetail10(String analysisDate, String startDate, String endDate, String marketCd, String stockCd); //QueryDsl
 
+    @Query(value = "SELECT t20 " +
+            "         FROM NotifyDetail20 t20 " +
+            "        WHERE t20.analysisDate = ?1 " +
+            "          AND t20.stockDate BETWEEN ?2 AND ?3 " +
+            "          AND t20.marketCd = ?4" +
+            "          AND t20.stockCd = ?5" +
+            "        ORDER BY t20.stockDate")
+    List<NotifyDetail20> findNotifyDetail20(String analysisDate, String startDate, String endDate, String marketCd, String stockCd); //QueryDsl
+
+    @Query(value = "SELECT t30 " +
+            "         FROM NotifyDetail30 t30 " +
+            "        WHERE t30.analysisDate = ?1 " +
+            "          AND t30.stockDate BETWEEN ?2 AND ?3 " +
+            "          AND t30.marketCd = ?4" +
+            "          AND t30.stockCd = ?5" +
+            "        ORDER BY t30.stockDate")
+    List<NotifyDetail30> findNotifyDetail30(String analysisDate, String startDate, String endDate, String marketCd, String stockCd); //QueryDsl
+
     @Query(value = "SELECT n" +
             "         FROM NotifySummary n" +
             "        WHERE n.analysisDate = ?1 " +

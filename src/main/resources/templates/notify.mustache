@@ -2,30 +2,31 @@
 {{>layout/header}}
 
 
-
-<div>
+<div class="notify-summary">
+    <div>Triple Screen 분석</div>
+    {{notify.0.analysisDate}}
     <table class="table table-horizontal table-bordered">
         <thead class="thead-strong">
         <tr>
-            <th>분석날짜</th>
-            <th>국가코드</th>
-            <th>시장코드</th>
-            <th>주식코드</th>
+            <th>시장명</th>
             <th>주식명</th>
             <th>의견날짜</th>
             <th>투자의견</th>
+            <th>Triple Screen</th>
+            <th>Trend Following</th>
+            <th>Reversals</th>
         </tr>
         </thead>
         <tbody id="tbody">
         {{#notify}}
             <tr>
-                <td>{{analysisDate}}</td>
-                <td>{{marketLocCd}}</td>
-                <td>{{marketCd}}</td>
-                <td><a href="/notify/{{analysisDate}}/{{marketLocCd}}/{{marketCd}}/{{stockCd}}">{{stockCd}}</a></td>
-                <td>{{stockNm}}</td>
+                <td>{{marketCd}}({{marketLocCd}})</td>
+                <td>{{stockNm}}[{{stockCd}}]</td>
                 <td>{{stockDate}}</td>
                 <td>{{opinion}}</td>
+                <td><a href="/notify/{{analysisDate}}/{{marketLocCd}}/{{marketCd}}/{{stockCd}}/10">보기</a></td>
+                <td><a href="/notify/{{analysisDate}}/{{marketLocCd}}/{{marketCd}}/{{stockCd}}/20">보기</a></td>
+                <td><a href="/notify/{{analysisDate}}/{{marketLocCd}}/{{marketCd}}/{{stockCd}}/30">보기</a></td>
             </tr>
         {{/notify}}
         </tbody>

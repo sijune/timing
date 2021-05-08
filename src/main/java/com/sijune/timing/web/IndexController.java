@@ -4,7 +4,6 @@ import com.sijune.timing.config.auth.LoginUser;
 import com.sijune.timing.config.auth.dto.SessionUser;
 import com.sijune.timing.service.NotifyService;
 import com.sijune.timing.service.PostsService;
-import com.sijune.timing.web.dto.NotifyResponseDto;
 import com.sijune.timing.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -38,16 +37,22 @@ public class IndexController { //화면간 이동을 담당
     }
 
     //개별 데이터 확인
-    @GetMapping("/notify/{analysisDate}/{marketLocCd}/{marketCd}/{stockCd}")
+    @GetMapping("/notify/{analysisDate}/{marketLocCd}/{marketCd}/{stockCd}/{tradeClsCd}")
     public String notify(@PathVariable String analysisDate,
                          @PathVariable String marketLocCd,
                          @PathVariable String marketCd,
                          @PathVariable String stockCd,
+                         @PathVariable String tradeClsCd,
                          Model model, @LoginUser SessionUser sessionUser){
-        System.out.println("#####OK");
-        model.addAttribute("notifyDetail10", notifyService.findNotifyDetail10(analysisDate, marketLocCd, marketCd, stockCd, sessionUser));
+        if("10".equals(tradeClsCd)){
+            model.addAttribute("notifyDetail"+tradeClsCd, notifyService.findNotifyDetail10(analysisDate, marketLocCd, marketCd, stockCd, tradeClsCd, sessionUser));
+        }else if("20".equals(tradeClsCd)){
+            model.addAttribute("notifyDetail"+tradeClsCd, notifyService.findNotifyDetail20(analysisDate, marketLocCd, marketCd, stockCd, tradeClsCd, sessionUser));
+        }else if("30".equals(tradeClsCd)){
+            model.addAttribute("notifyDetail"+tradeClsCd, notifyService.findNotifyDetail30(analysisDate, marketLocCd, marketCd, stockCd, tradeClsCd, sessionUser));
+        }
         checkSessionUser(model, sessionUser);
-        return "analysis";
+        return "analysis"+tradeClsCd;
     }
 
     @GetMapping("/stock")

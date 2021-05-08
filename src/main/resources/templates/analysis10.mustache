@@ -1,18 +1,19 @@
 
 {{>layout/header}}
 
-<div>
-    <canvas id="analysisChart10_1"></canvas>
-    <canvas id="analysisChart10_2"></canvas>
-    <canvas id="analysisChart10_3"></canvas>
+<div class="canvas-chart">
+    <div>Triple Screen</div>
+    {{notifyDetail10.0.analysisDate}}
+    <canvas id="analysisChart10-1"></canvas>
+    <canvas id="analysisChart10-2"></canvas>
+    <canvas id="analysisChart10-3"></canvas>
 </div>
 
 <div>
 
-    <table class="table table-horizontal table-bordered" id="analysis10_table">
+    <table class="table table-horizontal table-bordered" id="analysis10-table">
         {{#notifyDetail10}}
             <tr>
-                <td>{{analysisDate}}</td>
                 <td>{{marketCd}}</td>
                 <td>{{stockCd}}</td>
                 <td>{{stockDate}}</td>

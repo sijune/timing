@@ -131,14 +131,12 @@ public class NotifyService {
 
     //날짜별 개별데이터 조회, 10
     @Transactional(readOnly = true)
-    public List<NotifyDetail10ResponseDto> findNotifyDetail10(String analysisDate, String marketLocCd, String marketCd, String stockCd, SessionUser sessionUser) {
+    public List<NotifyDetail10ResponseDto> findNotifyDetail10(String analysisDate, String marketLocCd, String marketCd, String stockCd, String tradeClsCd, SessionUser sessionUser) {
 
         String email = sessionUser.getEmail();
         List<NotifyDetail10ResponseDto> rs = new ArrayList<>();
 
         try {
-
-            String tradeClsCd = "10";
 
             //분석날짜 기준 1년간 데이터 제공
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -154,6 +152,74 @@ public class NotifyService {
             rs = notifyRepository.findNotifyDetail10(analysisDate, startDate, endDate, marketCd, stockCd)
                     .stream()
                     .map(NotifyDetail10ResponseDto::new)
+                    .collect(Collectors.toList());
+
+
+        }catch(Exception e) {
+            System.out.println(e);
+        }finally {
+            return rs;
+        }
+
+    }
+
+    //날짜별 개별데이터 조회, 20
+    @Transactional(readOnly = true)
+    public List<NotifyDetail20ResponseDto> findNotifyDetail20(String analysisDate, String marketLocCd, String marketCd, String stockCd, String tradeClsCd, SessionUser sessionUser) {
+
+        String email = sessionUser.getEmail();
+        List<NotifyDetail20ResponseDto> rs = new ArrayList<>();
+
+        try {
+
+            //분석날짜 기준 1년간 데이터 제공
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String endDate = analysisDate;
+            Date from = sdf.parse(analysisDate);
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(from);
+            cal.add(Calendar.YEAR, -1);
+            String startDate = sdf.format(cal.getTime());
+
+
+            //분석일자에 10일간 데이터 추출
+            rs = notifyRepository.findNotifyDetail20(analysisDate, startDate, endDate, marketCd, stockCd)
+                    .stream()
+                    .map(NotifyDetail20ResponseDto::new)
+                    .collect(Collectors.toList());
+
+
+        }catch(Exception e) {
+            System.out.println(e);
+        }finally {
+            return rs;
+        }
+
+    }
+
+    //날짜별 개별데이터 조회, 30
+    @Transactional(readOnly = true)
+    public List<NotifyDetail30ResponseDto> findNotifyDetail30(String analysisDate, String marketLocCd, String marketCd, String stockCd, String tradeClsCd, SessionUser sessionUser) {
+
+        String email = sessionUser.getEmail();
+        List<NotifyDetail30ResponseDto> rs = new ArrayList<>();
+
+        try {
+
+            //분석날짜 기준 1년간 데이터 제공
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String endDate = analysisDate;
+            Date from = sdf.parse(analysisDate);
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(from);
+            cal.add(Calendar.YEAR, -1);
+            String startDate = sdf.format(cal.getTime());
+
+
+            //분석일자에 10일간 데이터 추출
+            rs = notifyRepository.findNotifyDetail30(analysisDate, startDate, endDate, marketCd, stockCd)
+                    .stream()
+                    .map(NotifyDetail30ResponseDto::new)
                     .collect(Collectors.toList());
 
 

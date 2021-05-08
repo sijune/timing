@@ -1,0 +1,32 @@
+
+{{>layout/header}}
+
+<div class="canvas-chart">
+    <div>Reversal</div>
+    {{notifyDetail30.0.analysisDate}}
+    <canvas id="analysisChart30-1"></canvas>
+    <canvas id="analysisChart30-2"></canvas>
+    <canvas id="analysisChart30-3"></canvas>
+</div>
+
+<div>
+
+    <table class="table table-horizontal table-bordered" id="analysis30-table">
+        {{#notifyDetail30}}
+            <tr>
+                <td>{{marketCd}}</td>
+                <td>{{stockCd}}</td>
+                <td>{{stockDate}}</td>
+                <td>{{close}}</td>
+                <td>{{ma20}}</td>
+                <td>{{upper}}</td>
+                <td>{{lower}}</td>
+                <td>{{pb}}</td>
+                <td>{{iip21}}</td>
+
+            </tr>
+        {{/notifyDetail30}}
+    </table>
+</div>
+
+{{>layout/footer}}

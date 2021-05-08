@@ -1,0 +1,32 @@
+
+{{>layout/header}}
+
+<div class="canvas-chart">
+    <div>Trend Following</div>
+    {{notifyDetail20.0.analysisDate}}
+    <canvas id="analysisChart20-1"></canvas>
+    <canvas id="analysisChart20-2"></canvas>
+    <canvas id="analysisChart20-3"></canvas>
+</div>
+
+<div>
+
+    <table class="table table-horizontal table-bordered" id="analysis20-table">
+        {{#notifyDetail20}}
+            <tr>
+                <td>{{marketCd}}</td>
+                <td>{{stockCd}}</td>
+                <td>{{stockDate}}</td>
+                <td>{{close}}</td>
+                <td>{{ma20}}</td>
+                <td>{{upper}}</td>
+                <td>{{lower}}</td>
+                <td>{{pb}}</td>
+                <td>{{mfi10}}</td>
+
+            </tr>
+        {{/notifyDetail20}}
+    </table>
+</div>
+
+{{>layout/footer}}

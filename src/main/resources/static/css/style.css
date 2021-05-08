@@ -246,3 +246,23 @@ ul {
     margin: 10px;
 }
 
+.notify-summary{
+    background-color: #fff;
+}
+
+/* chart style */
+.canvas-chart {
+    background-color: #fff;
+}
+
+#analysis10-table {
+    display: none;
+}
+
+#analysis20-table {
+    display: none;
+}
+
+#analysis30-table {
+    display: none;
+}
